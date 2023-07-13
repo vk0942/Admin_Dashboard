@@ -1,0 +1,253 @@
+:root{
+    background-color:black;
+    color:white;
+}
+body{
+    min-height: 100vh;
+    display:grid;
+    grid-template-columns: repeat(19,1fr);
+    grid-template-rows: 1fr 8fr;
+    padding:0;
+    margin:0;
+    font-style:"Roboto";
+}
+body div{
+    padding:0;
+    margin:0;
+}
+/*Sidebar properties*/
+.sidebar{
+    border:2px solid blue;
+    grid-column-start: 1;
+    grid-column-end:1;
+    grid-row: 1/3;
+    display:grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.sidebar .heading{
+   grid-row: 1/2;
+   display:flex;
+   flex-direction: row;
+   border:1px solid black;
+   padding: 2rem;
+   
+   font-size:2vw;
+   font-weight:600;
+   gap:1vw;
+}
+.sidebar .navigation div{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+}
+.sidebar .branding div{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+}
+.sidebar .heading img{
+    width:2vw;
+    height:2vw;
+}
+.sidebar .navigation img{
+    width:1.5vw;
+    height:1.5vw;
+}
+.sidebar .branding img{
+    width:1.5vw;
+    height:1.5vw;
+}
+.sidebar .navigation{
+    grid-row:2/4;
+    border:1px solid black;
+    display:flex;
+    flex-direction: column;
+    padding: 2rem;
+    padding-top:0;
+    font-size:1.3vw;
+    gap:1vw;
+}
+.sidebar .branding{
+   border:1px solid black;
+   display:flex;
+   flex-direction: column;
+   padding: 2rem;
+   padding-top:0;
+   font-size:1.3vw;
+   gap:1vw;
+}
+/*Header properties*/
+.header{
+    grid-row:1;
+    grid-column: 2/20;
+    border:2px solid yellow;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 2fr,1fr;
+}
+.header div{
+    border:1px solid black;
+}
+.header .user_info{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display:flex;
+    align-items:center;
+    gap:1rem;
+    padding-left:2rem;
+    font-size:2vw;
+    font-weight:700;
+}
+.user_info img{
+    width:4vw;
+    height:4vw;
+}
+.header .buttons{
+    grid-column: 1/2;
+    grid-row: 2;
+    display:flex;
+    align-items:center;
+    justify-content:right;
+    gap:1rem;
+    padding-left:2rem;
+    
+}
+.header button{
+    border-radius: 1rem;
+    
+}
+.header input{
+    width:80%;
+    border-radius:1rem;
+}
+.header .search{
+    grid-column: 2/4;
+    grid-row: 2/3;
+    display:flex;
+    align-items: center;
+    justify-content: right;
+    gap:1vw;
+    padding-right:1rem;
+}
+.header .search img{
+    width:2rem;
+    height:2rem;
+}
+.header .notification{
+    grid-column: 2/4;
+    display:flex;
+    align-items:center;
+    justify-content: right;
+    
+    padding-right:5vw;
+}
+.notification .wrapper{
+    border:none;
+    display:flex;
+    gap:2rem;
+    align-items:center;
+    justify-content: right;
+    font-size:1vw;
+}
+.header .notification .bell{
+   width:1vw;
+   height: 1vw;
+}
+.header .notification .logo{
+    width: 3vw;
+    height:3vw;
+}
+/*content 1 or projects stylings*/
+
+.content_1{
+    grid-column: 2/15;
+    border:2px solid red;
+    min-height:100vh;
+}
+.content_1 .heading{
+    margin-top:1rem;
+    margin-left:4rem;
+    margin-bottom:1rem;
+    font-size:1.5vw;
+}
+.content_1 .projects{
+    border:2px solid red;
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(290px,1fr));
+    gap:1vw;
+}
+.project{
+  min-height:13vw;
+  display:grid;
+  align-items:center;
+  padding:1rem;
+  border:3px solid black;
+}
+.project .Title{
+  font-size:1.2vw;
+  font-weight:600;
+}
+.project .para{
+    font-size:1vw;
+    font-weight:300;
+}
+.project .icons{
+    display:flex;
+    justify-content:right;
+}
+
+/*content_2 stylings*/
+
+.content_2{
+    border:2px solid green;
+    grid-column: 15/20;
+    display:grid;
+    grid-template-rows: repeat(2,43%);
+    padding-left:2vw;
+    padding-top:1vw;
+    gap:2.5vw;
+}
+.content_2 .Announcements{
+    display:flex;
+    flex-direction:column;
+    gap:1vw;
+    
+}
+.content_2 .heading{
+    font-size:1.5vw;
+}
+
+.Announcements .material{
+
+    max-width:60%;
+    border:2px solid black;
+    display:grid;
+    grid-template-rows: repeat(auto-fit,1fr);
+    gap:1vw;
+  
+    padding:1vw 1vw 1vw 2vw;
+    font-size:1vw;
+    font-weight:300;
+}
+
+.Announcements .block{
+    display:flex;
+    flex-direction: column;
+    gap:0.5vw;
+}
+.Trending .material{
+
+    max-width:60%;
+    border:2px solid black;
+    display:grid;
+    grid-template-rows: repeat(auto-fit,1fr);
+    gap:1vw;
+    padding:2vw;
+    font-size:1vw;
+    font-weight:300;
+}
+.Trending .block{
+    display:flex;
+    
+}
+
