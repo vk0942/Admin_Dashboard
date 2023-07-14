@@ -1,6 +1,8 @@
 :root{
     background-color:black;
     color:white;
+    --bgcolor:rgb(64, 129, 0);
+    --bg_block:rgb(3, 4, 3);
 }
 body{
     min-height: 100vh;
@@ -10,6 +12,7 @@ body{
     padding:0;
     margin:0;
     font-style:"Roboto";
+    border:none;
 }
 body div{
     padding:0;
@@ -17,7 +20,8 @@ body div{
 }
 /*Sidebar properties*/
 .sidebar{
-    border:2px solid blue;
+    background:linear-gradient(90deg,rgb(0, 0, 9),rgb(4, 4, 76),rgb(6, 6, 110),rgb(3, 3, 141));
+  
     grid-column-start: 1;
     grid-column-end:1;
     grid-row: 1/3;
@@ -28,7 +32,7 @@ body div{
    grid-row: 1/2;
    display:flex;
    flex-direction: row;
-   border:1px solid black;
+
    padding: 2rem;
    
    font-size:2vw;
@@ -59,7 +63,7 @@ body div{
 }
 .sidebar .navigation{
     grid-row:2/4;
-    border:1px solid black;
+    
     display:flex;
     flex-direction: column;
     padding: 2rem;
@@ -67,8 +71,11 @@ body div{
     font-size:1.3vw;
     gap:1vw;
 }
+.sidebar .navigation div:hover{
+   font-size:1vw;
+}
 .sidebar .branding{
-   border:1px solid black;
+   
    display:flex;
    flex-direction: column;
    padding: 2rem;
@@ -76,35 +83,45 @@ body div{
    font-size:1.3vw;
    gap:1vw;
 }
+.sidebar .branding div:hover{
+    font-size:1vw;
+ }
 /*Header properties*/
 .header{
     grid-row:1;
     grid-column: 2/20;
-    border:2px solid yellow;
+    
     display:grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(4,1fr);
     grid-template-rows: 2fr,1fr;
+    background:linear-gradient(90deg,rgb(5, 11, 98),rgb(2, 2, 106),rgb(1, 1, 32),rgb(0, 0, 0)); 
+
+    
 }
-.header div{
-    border:1px solid black;
-}
+
 .header .user_info{
-    grid-column: 1/2;
-    grid-row: 1/2;
+    grid-column: 1/3;
+    grid-row: 1/3;
     display:flex;
     align-items:center;
     gap:1rem;
     padding-left:2rem;
     font-size:2vw;
     font-weight:700;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-image: url("./Icons/ben_10.png");
+    
+    background-position-y:-0cm;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 .user_info img{
     width:4vw;
     height:4vw;
 }
 .header .buttons{
-    grid-column: 1/2;
-    grid-row: 2;
+    grid-column: 2/3;
+    grid-row: 1;
     display:flex;
     align-items:center;
     justify-content:right;
@@ -114,14 +131,22 @@ body div{
 }
 .header button{
     border-radius: 1rem;
-    
+    background:rgb(20, 0, 44);
+    color:white;
+    padding:0.3rem;
 }
 .header input{
     width:80%;
     border-radius:1rem;
+    border:none;
+    background-color:white;
+}
+.header input:focus{
+    background-color:white;
+    border:none;
 }
 .header .search{
-    grid-column: 2/4;
+    grid-column: 3/5;
     grid-row: 2/3;
     display:flex;
     align-items: center;
@@ -134,11 +159,11 @@ body div{
     height:2rem;
 }
 .header .notification{
-    grid-column: 2/4;
+    grid-column: 3/5;
     display:flex;
     align-items:center;
-    justify-content: right;
-    
+    justify-content: space-between;
+   
     padding-right:5vw;
 }
 .notification .wrapper{
@@ -147,7 +172,8 @@ body div{
     gap:2rem;
     align-items:center;
     justify-content: right;
-    font-size:1vw;
+    font-size:1.4vw;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 .header .notification .bell{
    width:1vw;
@@ -161,7 +187,8 @@ body div{
 
 .content_1{
     grid-column: 2/15;
-    border:2px solid red;
+   
+    
     min-height:100vh;
 }
 .content_1 .heading{
@@ -171,21 +198,29 @@ body div{
     font-size:1.5vw;
 }
 .content_1 .projects{
-    border:2px solid red;
+  
     display:grid;
     grid-template-columns: repeat(auto-fit,minmax(290px,1fr));
     gap:1vw;
+    padding-left:1vw;
 }
 .project{
   min-height:13vw;
   display:grid;
   align-items:center;
   padding:1rem;
-  border:3px solid black;
+  
+  box-shadow:-5px 0px 4px  rgba(255,255,255,1);
+}
+.project:hover{
+    box-shadow:none;
+    
 }
 .project .Title{
   font-size:1.2vw;
   font-weight:600;
+  background-color:var(--bgcolor);
+  padding:1vw;
 }
 .project .para{
     font-size:1vw;
@@ -194,20 +229,30 @@ body div{
 .project .icons{
     display:flex;
     justify-content:right;
+    gap:3vw;
 }
-
+.project .icons img{
+    width:1vw;
+    height:1vw;
+}
 /*content_2 stylings*/
 
 .content_2{
-    border:2px solid green;
+
     grid-column: 15/20;
     display:grid;
     grid-template-rows: repeat(2,43%);
-    padding-left:2vw;
+    padding-left:3vw;
     padding-top:1vw;
-    gap:2.5vw;
+    gap:2.9vw;
 }
 .content_2 .Announcements{
+    display:flex;
+    flex-direction:column;
+    gap:1vw;
+    
+}
+.content_2 .Trending{
     display:flex;
     flex-direction:column;
     gap:1vw;
@@ -216,18 +261,22 @@ body div{
 .content_2 .heading{
     font-size:1.5vw;
 }
-
+.content_2 .Title{
+    font-size:1vw;
+    font-weight:400;
+}
 .Announcements .material{
 
-    max-width:60%;
+    max-width:70%;
     border:2px solid black;
     display:grid;
     grid-template-rows: repeat(auto-fit,1fr);
-    gap:1vw;
-  
-    padding:1vw 1vw 1vw 2vw;
-    font-size:1vw;
-    font-weight:300;
+    gap:3vw;
+    box-shadow:-5px 0px 4px  rgba(255,255,255,1);
+    
+    padding:2vw 1vw 2vw 2vw;
+    font-size:0.8vw;
+    font-weight:200;
 }
 
 .Announcements .block{
@@ -237,17 +286,30 @@ body div{
 }
 .Trending .material{
 
-    max-width:60%;
+    max-width:66%;
     border:2px solid black;
     display:grid;
     grid-template-rows: repeat(auto-fit,1fr);
-    gap:1vw;
+    gap:1.5vw;
     padding:2vw;
     font-size:1vw;
     font-weight:300;
+    box-shadow:-5px 0px 4px  rgba(255,255,255,1);
+
 }
 .Trending .block{
     display:flex;
+    gap:1vw;
     
+}
+.material{
+    background:linear-gradient(90deg, rgb(3, 0, 24),rgb(28, 1, 61),rgb(62, 1, 69));
+}
+.material:hover{
+    box-shadow: none;
+}
+.Trending img{
+    width:2vw;
+    height:2vw;
 }
 
